@@ -2,6 +2,7 @@ const axios = require('axios');
 const mongoose = require('mongoose');
 const {GitInfoSchema} = require('../models/gitInfoModel');
 const GitInfoModel =  mongoose.model('GitInfo',GitInfoSchema);
+const path = require('path');
 
 let trees = []
 let blob = []
@@ -40,11 +41,7 @@ const format = (array) =>{
 }
 
 function instructions(req,res){
-    res.json({
-        'By scrapping' : 'Access the route /api/scraping/github_username/github_repository to retrieve the expected information Ex: /api/repo/leonardogandrade/trustly',      
-        'By scrapping' : 'Access the route /api/gitapi/github_username/github_repository to retrieve the expected information Ex: /api/repo/leonardogandrade/trustly',      
-        'By API' : ''
-    })
+    res.sendFile(path.join(__dirname,'../','../','/index.html'));
 }
 
 async function getGitData(req,res){

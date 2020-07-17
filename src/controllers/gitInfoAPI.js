@@ -15,7 +15,7 @@ module.exports = {
                 break;
             }
             default : {
-                res.json(localData);
+                res.json(localData.information);
                 break;
             }
 
