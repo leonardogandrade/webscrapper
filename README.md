@@ -1,1 +1,1 @@
-# Trustly web scraping chalenge
+# Web scraping example
